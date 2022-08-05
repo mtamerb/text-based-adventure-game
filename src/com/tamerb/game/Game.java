@@ -13,11 +13,13 @@ public class Game {
     public void start() {
         System.out.println("Welcome to the Patika Adventure Game! ");
         System.out.println("-------------------------------------");
-        System.out.print("\tPlease enter a name : ");
+        System.out.print("\t Please enter a name : ");
 
         playerName = scan.nextLine();
         Player player = new Player(playerName);
-
+        System.out.println("\tAre u ready fro this "+ player.getName() + "? #");
+        System.out.println("\tOK... Let's start");
+        player.selectChar();
     }
 
 

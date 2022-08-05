@@ -1,5 +1,10 @@
 package com.tamerb.game.player;
 
+import com.tamerb.game.character.GameCharacter;
+import com.tamerb.game.character.archer.Archer;
+import com.tamerb.game.character.knight.Knight;
+import com.tamerb.game.character.samurai.Samurai;
+
 public class Player {
     private int damage;
     private int health;
@@ -7,12 +12,20 @@ public class Player {
     private String playerName;
     private String charName;
 
-    public Player(String playerName) {
-        this.playerName = playerName;
+    public Player(String name) {
+        this.playerName = name;
     }
 
     public void selectChar() {
-        System.out.println("Karakterinizi seçiniz : ");
+        System.out.println("Please choose your character : ");
+        Samurai samurai = new Samurai();
+        Knight knight = new Knight();
+        Archer archer = new Archer();
+
+        System.out.println(knight.getDamage());
+
+
+        System.out.println("-------------------------------");
     }
 
     public String getCharName() {
