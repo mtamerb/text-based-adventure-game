@@ -1,9 +1,12 @@
-package com.tamerb.game.character.player;
+package com.tamerb.game.player;
 
 import com.tamerb.game.character.GameCharacter;
 import com.tamerb.game.character.archer.Archer;
 import com.tamerb.game.character.knight.Knight;
 import com.tamerb.game.character.samurai.Samurai;
+import com.tamerb.game.location.Location;
+import com.tamerb.game.location.normalloc.SafeHouse;
+import com.tamerb.game.location.normalloc.ToolStore;
 
 import java.util.Scanner;
 
@@ -29,7 +32,7 @@ public class Player {
 
     public void selectChar() {
         System.out.println("\n\tPlease choose a character below: ");
-        System.out.println("\t------------------------------------------------");
+        System.out.println("\t\t------------CHARACTER-----------------");
         GameCharacter[] charList = {new Samurai(), new Knight(), new Archer()};
         System.out.println("\tCharacter\t\tDamage\t\tHealth\t\tMoney\t\t");
         for (GameCharacter gameChar : charList) {
@@ -55,10 +58,31 @@ public class Player {
             }
         }
 
-        System.out.println("Selected character is " + getCharName() + " --> " +
+        System.out.println("\tSelected character is " + getCharName() + " --> " +
                 "\tDamage: " + this.getDamage() +
                 "\tHealth: " + this.getHealth() +
                 "\tMoney: " + this.getMoney());
+        System.out.println("\t-------------------------------------------------");
+    }
+
+
+    public void selectLoc() {
+        Location location = null;
+        System.out.println("\t\t\n------------LOCATION------------------");
+        System.out.println("\t1- -> Safe House");
+        System.out.println("\t2- -> Tool Store");
+        System.out.println("\tWhere would you like to go ?");
+        int selectLoc = scan.nextInt();
+
+        switch (selectLoc) {
+            case 1:
+                location = new SafeHouse(this);
+                break;
+            default:
+                location = new ToolStore(this);
+                break;
+        }
+        location.onLocation();
     }
 
     public int getDamage() {

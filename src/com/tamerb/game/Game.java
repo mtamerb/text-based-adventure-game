@@ -1,7 +1,7 @@
 package com.tamerb.game;
 
 
-import com.tamerb.game.character.player.Player;
+import com.tamerb.game.player.Player;
 
 import java.util.Scanner;
 
@@ -19,6 +19,7 @@ public class Game {
         System.out.println("\tAre u ready for adventure " + player.getPlayerName() + " ?");
         System.out.println("\tOK... Let's start");
         player.selectChar();
+        player.selectLoc();
 
 
 
