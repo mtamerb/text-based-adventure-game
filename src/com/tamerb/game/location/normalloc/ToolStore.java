@@ -9,7 +9,7 @@ public  class ToolStore extends NormalLocation {
 
     @Override
     public boolean onLocation() {
-        System.out.println("You are in Tool-store...");
+        System.out.println("\t\tYou are in Tool-Store...");
         return true;
     }
 }

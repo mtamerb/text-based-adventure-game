@@ -8,8 +8,8 @@ public class SafeHouse extends NormalLocation {
     }
     @Override
     public boolean onLocation() {
-        System.out.println("\tYou are in Safe Home");
-        System.out.println("\t Your health is renewed");
+        System.out.println("\t\tYou are in Safe Home");
+        System.out.println("\t\tYour health is renewed");
         return true;
     }
 }
