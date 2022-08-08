@@ -31,9 +31,9 @@ public class Player {
     public void selectChar() {
         System.out.println("\tAre u ready for adventure " + getPlayerName() + " ?");
         System.out.println("\tOK... Let's start");
-        System.out.println("\t\t------------CHARACTER-----------------");
+        System.out.println("\n\t\t------------CHARACTER-----------------");
         GameCharacter[] charList = {new Samurai(), new Knight(), new Archer()};
-        System.out.println("\tCharacter\t\tDamage\t\tHealth\t\tMoney\t\t");
+        System.out.println("\n\tCharacter\t\tDamage\t\tHealth\t\tMoney\t\t");
         for (GameCharacter gameChar : charList) {
             System.out.println("\t " + gameChar.getCharName() + "\t\t" +
                     gameChar.getDamage() + "\t\t\t" +
@@ -42,7 +42,9 @@ public class Player {
         }
         System.out.print("\tPlease choose a character above : ");
         String chooseChar = scan.nextLine();
+
         while (true) {
+
             if (chooseChar.equalsIgnoreCase("samurai")) {
                 initPlayer(new Samurai());
                 break;
@@ -54,6 +56,9 @@ public class Player {
             if (chooseChar.equalsIgnoreCase("archer")) {
                 initPlayer(new Archer());
                 break;
+            } else {
+                System.out.print("\tAgain Please : ");
+                chooseChar = scan.nextLine();
             }
         }
     }
