@@ -4,14 +4,15 @@ import com.tamerb.game.character.GameCharacter;
 import com.tamerb.game.character.archer.Archer;
 import com.tamerb.game.character.knight.Knight;
 import com.tamerb.game.character.samurai.Samurai;
-
+import lombok.Data;
 
 import java.util.Scanner;
 
+@Data
 public class Player {
-    private int damage;
-    private int health;
-    private int money;
+    private int playerDamage;
+    private int playerHealth;
+    private int playerMoney;
     private String playerName;
     private String charName;
 
@@ -22,9 +23,9 @@ public class Player {
     }
 
     public void initPlayer(GameCharacter gameCharacter) {
-        this.setDamage(gameCharacter.getDamage());
-        this.setHealth(gameCharacter.getHealth());
-        this.setMoney(gameCharacter.getMoney());
+        this.setPlayerDamage(gameCharacter.getDamage());
+        this.setPlayerHealth(gameCharacter.getHealth());
+        this.setPlayerMoney(gameCharacter.getMoney());
         this.setCharName(gameCharacter.getCharName());
     }
 
@@ -63,43 +64,4 @@ public class Player {
         }
     }
 
-    public int getDamage() {
-        return damage;
-    }
-
-    public void setDamage(int damage) {
-        this.damage = damage;
-    }
-
-    public int getHealth() {
-        return health;
-    }
-
-    public void setHealth(int health) {
-        this.health = health;
-    }
-
-    public int getMoney() {
-        return money;
-    }
-
-    public void setMoney(int money) {
-        this.money = money;
-    }
-
-    public String getPlayerName() {
-        return playerName;
-    }
-
-    public void setPlayerName(String playerName) {
-        this.playerName = playerName;
-    }
-
-    public String getCharName() {
-        return charName;
-    }
-
-    public void setCharName(String charName) {
-        this.charName = charName;
-    }
 }

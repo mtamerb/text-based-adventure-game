@@ -1,5 +1,9 @@
 package com.tamerb.game.location.normalloc.toolstore;
 
+
+import lombok.Data;
+
+@Data
 public class Weapon {
 
     private String weaponName;
@@ -16,41 +20,19 @@ public class Weapon {
 
     public static Weapon[] weapons() {
         Weapon[] weaponList = new Weapon[3];
-        weaponList[0] = new Weapon("Gun  ", 1, 2, 25);
-        weaponList[1] = new Weapon("Sword", 2, 3, 35);
-        weaponList[2] = new Weapon("Rifle", 3, 7, 45);
+        weaponList[0] = new Weapon("Gun  ", 1, 2, 8);
+        weaponList[1] = new Weapon("Sword", 2, 3, 11);
+        weaponList[2] = new Weapon("Rifle", 3, 7, 30);
         return weaponList;
     }
 
-    public String getWeaponName() {
-        return weaponName;
+    public static Weapon soldWeaponId(int id) {
+        for (Weapon w : weapons()) {
+            if (w.getWeaponId() == id) {
+                return w;
+            }
+        }
+        return null;
     }
 
-    public void setWeaponName(String weaponName) {
-        this.weaponName = weaponName;
-    }
-
-    public int getWeaponId() {
-        return weaponId;
-    }
-
-    public void setWeaponId(int weaponId) {
-        this.weaponId = weaponId;
-    }
-
-    public int getWeaponDamage() {
-        return weaponDamage;
-    }
-
-    public void setWeaponDamage(int weaponDamage) {
-        this.weaponDamage = weaponDamage;
-    }
-
-    public int getWeaponPrice() {
-        return weaponPrice;
-    }
-
-    public void setWeaponPrice(int weaponPrice) {
-        this.weaponPrice = weaponPrice;
-    }
 }
