@@ -93,8 +93,8 @@ public class ToolStore extends NormalLocation {
         System.out.println("\n\t\tArmorName\t\tArmorId\t\tBlockDamage\t\tPrice");
 
         for (Armor armors : Armor.armors()) {
-            System.out.println("\t\t\t" + armors.getArmorName() + "\t\t\t" + armors.getArmorId() + "\t\t\t" +
-                    armors.getBlockDamage() + "\t\t\t" +
+            System.out.println("\t\t" + armors.getArmorName() + "\t\t" + armors.getArmorId() + "\t\t\t" +
+                    armors.getBlockDamage() + "\t\t\t\t" +
                     armors.getArmorPrice());
 
         }
